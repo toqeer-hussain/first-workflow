@@ -1,0 +1,11 @@
+name: First Workflow
+on: workflow_dispatch
+jobs: 
+  first-job:
+    runs-on: ubantu-latest
+    steps:
+      - name: Print Github Greeting
+        run: echo "Hello Github Actions"
+      - name: Print GoodBye
+        run : echo "Good Bye Github Actions"
+ 
