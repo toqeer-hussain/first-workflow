@@ -2,7 +2,7 @@ name: First Workflow
 on: workflow_dispatch
 jobs: 
   first-job:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Print Github Greeting
         run: echo "Hello Github Actions"
