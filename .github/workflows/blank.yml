@@ -1,11 +1,16 @@
 name: First Workflow
-on: workflow_dispatch
-jobs: 
-  first-job:
+on: push
+jobs:
+  test-cases:
     runs-on: ubuntu-latest
     steps:
       - name: Print Github Greeting
-        run: echo "Hello Github Actions"
-      - name: Print GoodBye
-        run : echo "Good Bye Github Actions"
- 
+        uses: actions/checkout@v3
+      - name: Install NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
